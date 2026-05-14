@@ -70,6 +70,11 @@ Images publiees :
 - `POST /api/invoices`
 - `PATCH /api/invoices/:id`
 - `DELETE /api/invoices/:id`
+- `GET /api/organisations`
+- `GET /api/organisations/:id`
+- `POST /api/organisations`
+- `PATCH /api/organisations/:id`
+- `DELETE /api/organisations/:id`
 - `GET /api/users`
 - `GET /api/users/:id`
 - `POST /api/users`
@@ -98,6 +103,18 @@ Exemple de payload invoice :
 }
 ```
 
+Exemple de payload organisation :
+
+```json
+{
+  "name": "Acme Corporation",
+  "email": "contact@acme.example",
+  "phone": "+1555010000",
+  "website": "https://acme.example",
+  "status": "active"
+}
+```
+
 ## Structure
 
 ```text
@@ -114,5 +131,6 @@ src/
   modules/
     health/
     invoices/
+    organisations/
     users/
 ```
