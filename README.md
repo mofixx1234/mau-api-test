@@ -24,6 +24,43 @@ L'API ecoute par defaut sur `http://localhost:3000`.
 - `npm test` : verifie les types TypeScript, utile pour CircleCI.
 - `npm run typecheck` : verifie les types sans generer de fichiers.
 
+## Docker
+
+Construire l'image :
+
+```bash
+docker build -t votre-user-dockerhub/express-ts-nest-like-api:latest .
+```
+
+Tester l'image en local :
+
+```bash
+docker run --rm -p 3000:3000 votre-user-dockerhub/express-ts-nest-like-api:latest
+```
+
+Publier sur Docker Hub :
+
+```bash
+docker login
+docker push votre-user-dockerhub/express-ts-nest-like-api:latest
+```
+
+L'API sera disponible sur `http://localhost:3000/api/health`.
+
+## CircleCI
+
+Le workflow CircleCI teste le projet, construit l'image Docker, puis la publie sur Docker Hub quand un commit arrive sur `main` ou `master`.
+
+Variables a creer dans CircleCI :
+
+- `DOCKERHUB_USERNAME` : votre nom d'utilisateur Docker Hub.
+- `DOCKERHUB_TOKEN` : un access token Docker Hub.
+
+Images publiees :
+
+- `votre-user-dockerhub/express-ts-nest-like-api:latest`
+- `votre-user-dockerhub/express-ts-nest-like-api:<commit-sha>`
+
 ## Endpoints
 
 - `GET /api/health` : page HTML de status.

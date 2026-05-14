@@ -1,0 +1,16 @@
+node_modules
+dist
+.git
+.circleci
+.env
+.env.*
+.server.pid
+.server.port
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage
+.nyc_output
+.cache
+README.md
