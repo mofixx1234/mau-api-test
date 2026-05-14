@@ -21,6 +21,7 @@ L'API ecoute par defaut sur `http://localhost:3000`.
 - `npm run dev` : lance le serveur en mode watch.
 - `npm run build` : compile le projet TypeScript dans `dist`.
 - `npm start` : lance la version compilee.
+- `npm test` : verifie les types TypeScript, utile pour CircleCI.
 - `npm run typecheck` : verifie les types sans generer de fichiers.
 
 ## Endpoints
