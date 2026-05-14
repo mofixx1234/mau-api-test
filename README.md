@@ -65,6 +65,11 @@ Images publiees :
 
 - `GET /api/health` : page HTML de status.
 - `GET /api/health/status` : status JSON.
+- `GET /api/invoices`
+- `GET /api/invoices/:id`
+- `POST /api/invoices`
+- `PATCH /api/invoices/:id`
+- `DELETE /api/invoices/:id`
 - `GET /api/users`
 - `GET /api/users/:id`
 - `POST /api/users`
@@ -77,6 +82,19 @@ Exemple de payload :
 {
   "name": "Ada Lovelace",
   "email": "ada@example.com"
+}
+```
+
+Exemple de payload invoice :
+
+```json
+{
+  "invoiceNumber": "INV-2026-002",
+  "customerName": "Grace Hopper",
+  "amount": 950,
+  "currency": "USD",
+  "status": "draft",
+  "dueDate": "2026-07-01"
 }
 ```
 
@@ -95,5 +113,6 @@ src/
   core/
   modules/
     health/
+    invoices/
     users/
 ```
