@@ -23,6 +23,16 @@ const colorize = (value: string, color: string, enabled: boolean): string => {
   return enabled ? `${color}${value}${colors.reset}` : value;
 };
 
+const description = [
+  'This service exposes a modular Express API built with a NestJS-inspired',
+  'architecture. Routes are grouped by feature modules, controllers handle',
+  'HTTP entrypoints, services keep business logic isolated, and DTO schemas',
+  'validate incoming payloads before they reach the application layer.',
+  '',
+  'The health page confirms that the server is reachable, while the JSON',
+  'status endpoint can be used by CI, deployment probes, or monitoring tools.',
+];
+
 export const renderStartupBanner = ({
   port,
   serviceName,
@@ -36,6 +46,8 @@ export const renderStartupBanner = ({
     colorize(logo, colors.cyan, useColor),
     '',
     'Welcome!',
+    '',
+    ...description,
     '',
     `${serviceName} is running correctly.`,
     `Status: ${colorize('OK', colors.green, useColor)}`,
