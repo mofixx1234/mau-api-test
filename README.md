@@ -14,7 +14,7 @@ npm install
 npm run dev
 ```
 
-L'API ecoute par defaut sur `http://localhost:3000`.
+L'API ecoute par defaut sur `http://localhost:6060`.
 
 ## Scripts
 
@@ -35,7 +35,7 @@ docker build -t votre-user-dockerhub/express-ts-nest-like-api:latest .
 Tester l'image en local :
 
 ```bash
-docker run --rm -p 3000:3000 votre-user-dockerhub/express-ts-nest-like-api:latest
+docker run --rm -p 6060:6060 votre-user-dockerhub/express-ts-nest-like-api:latest
 ```
 
 Publier sur Docker Hub :
@@ -45,7 +45,7 @@ docker login
 docker push votre-user-dockerhub/express-ts-nest-like-api:latest
 ```
 
-L'API sera disponible sur `http://localhost:3000/api/health`.
+L'API sera disponible sur `http://localhost:6060/api/health`.
 
 ## CircleCI
 
